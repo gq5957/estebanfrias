@@ -1,9 +1,6 @@
-# EstebanFrias Site (Private)
+# EstebanFrias Site (TypeScript, Private)
 
-Minimal personal hub built with:
-- Vite + React
-- Tailwind CSS
-- Framer Motion
+Vite + React + TypeScript + Tailwind + Framer Motion.
 
 ## Run locally
 ```bash
@@ -24,6 +21,5 @@ Import the repo in Vercel. Settings:
 - Output directory: `dist`
 
 ## Privacy
-This repo ships with:
 - `<meta name="robots" content="noindex,nofollow" />` in `index.html`
 - `public/robots.txt` disallowing crawlers
