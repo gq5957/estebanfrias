@@ -27,9 +27,28 @@ export default function Note() {
 
       <Markdown content={item.body} />
 
-      <div className="read-max pt-10">
-        <Link to="/notes" className="link text-[color:var(--accent)]">← Back to notes</Link>
-      </div>
+      <div className="read-max pt-12">
+  <Link
+    to="/notes"
+    className="inline-flex items-center gap-2 text-[color:var(--fg)] text-sm no-underline group"
+  >
+    {/* Arrow */}
+    <span
+      className="text-[color:var(--muted)] font-light
+                 opacity-0 transition
+                 duration-200 delay-75
+                 group-hover:opacity-100
+                 group-hover:-translate-x-1"
+      aria-hidden="true"
+    >
+      ←
+    </span>
+
+    <span className="group-hover:underline underline-offset-4 decoration-[rgba(15,30,61,0.3)]">
+      Back to notes
+    </span>
+  </Link>
+</div>
     </div>
   );
 }
