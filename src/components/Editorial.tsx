@@ -1,19 +1,11 @@
 import { ReactNode } from "react";
 
 export function H1({ children }: { children: ReactNode }) {
-  return (
-    <h1 className="text-[2.6rem] leading-[1.06] tracking-tight sm:text-[3.2rem]">
-      {children}
-    </h1>
-  );
+  return <h1 className="text-[3rem] leading-tight tracking-tight">{children}</h1>;
 }
 
 export function H2({ children }: { children: ReactNode }) {
-  return (
-    <h2 className="text-[1.6rem] leading-[1.2] tracking-tight sm:text-[1.9rem]">
-      {children}
-    </h2>
-  );
+  return <h2 className="text-[1.8rem] leading-tight tracking-tight">{children}</h2>;
 }
 
 export function P({ children }: { children: ReactNode }) {
@@ -21,21 +13,9 @@ export function P({ children }: { children: ReactNode }) {
 }
 
 export function Divider() {
-  return <div className="my-12 sm:my-16 border-b hairline" />;
+  return <div className="my-16 border-b border-[color:var(--hairline)]" />;
 }
 
 export function Kicker({ children }: { children: ReactNode }) {
-  return (
-    <div className="text-xs tracking-[0.18em] uppercase text-[color:var(--muted)]">
-      {children}
-    </div>
-  );
-}
-
-export function TextLink({ to, children }: { to: string; children: ReactNode }) {
-  return (
-    <a href={to} className="link text-[color:var(--accent)]">
-      {children}
-    </a>
-  );
+  return <div className="text-xs tracking-widest uppercase text-[color:var(--muted)]">{children}</div>;
 }
