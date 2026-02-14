@@ -1,8 +1,8 @@
-# EstebanFrias Site (TypeScript, Private)
+# EstebanFrias — Editorial Executive Site (TypeScript)
 
-Vite + React + TypeScript + Tailwind + Framer Motion.
+Vite + React + TypeScript + Tailwind + React Router.
 
-## Run locally
+## Local
 ```bash
 npm install
 npm run dev
@@ -15,11 +15,10 @@ npm run preview
 ```
 
 ## Vercel
-Import the repo in Vercel. Settings:
 - Framework preset: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
+- Build command: npm run build
+- Output directory: dist
 
 ## Privacy
-- `<meta name="robots" content="noindex,nofollow" />` in `index.html`
-- `public/robots.txt` disallowing crawlers
+- noindex meta tag in index.html
+- public/robots.txt disallow all
