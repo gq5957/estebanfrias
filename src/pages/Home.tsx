@@ -6,78 +6,127 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Esteban Frias — Enterprise AI & Operational Systems Architect"
+        title="Esteban Frias — AI Governance & Enterprise Operating Systems"
         canonicalPath="/"
-        description="Esteban Frias designs scalable AI workflow governance, enterprise operating models, and customer experience systems inside complex organizations."
+        description="Enterprise AI governance, operating model architecture, and scalable execution systems. Designed for complexity."
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Esteban Frias",
           url: "https://www.estebanfrias.com",
-          jobTitle: "Enterprise AI & Operational Systems Architect",
+          jobTitle: "Enterprise AI Governance & Operating Systems Architect",
           description:
-            "Systems-first leader designing scalable AI workflow governance, enterprise operating models, and customer experience enablement systems.",
+            "Designs scalable AI governance, enterprise operating models, and cross-functional execution systems.",
         }}
       />
 
-      <div className="read-max space-y-16">
+      <div className="read-max space-y-20">
+
         {/* HERO */}
         <div className="space-y-8">
-          <Kicker>AI · Systems · Enablement</Kicker>
 
-          <h1 className="text-[2.15rem] leading-[1.08] tracking-tight sm:text-[2.8rem] text-[color:var(--fg)] font-semibold">
-            Most organizations pilot initiatives.
+          <Kicker>AI · Systems · Governance</Kicker>
+
+          <h1 className="text-[2.2rem] leading-[1.06] tracking-tight sm:text-[2.9rem] font-semibold text-[color:var(--fg)]">
+            Most organizations pilot AI.
             <br />
-            I design the system that lets them scale.
+            Very few build the system that lets it scale.
           </h1>
 
           <div className="space-y-6 max-w-[46rem]">
+
             <P>
-              I architect scalable AI workflow governance, enterprise operating models, and customer
-              experience enablement systems — often where structure does not yet exist.
+              The model is rarely the problem.
+              The operating model usually is.
             </P>
 
             <P>
-              I’m drawn to uncharted environments: ambiguous mandates, undefined operating models,
-              early-stage AI programs, and experience systems that haven’t been built before. My role
-              is not to explore chaos. It’s to turn it into architecture.
+              AI governance, ownership design, cross-functional clarity — these aren’t
+              add-ons. They are architecture.
+            </P>
+
+            <P>
+              I design the structures that turn uncertain mandates into scalable
+              execution systems.
             </P>
 
             <div className="text-sm tracking-wide text-[color:var(--muted)]">
-              Uncertainty → Structure → Operating Model → Scaled Execution
+              Uncertainty → Structure → Operating Model → Institutionalized Execution
             </div>
+
           </div>
         </div>
 
         <Divider />
 
-        {/* EXECUTIVE BRIEF */}
-        <div className="space-y-4">
-          <Link to="/brief" className="group inline-flex items-center gap-2 no-underline">
+        {/* PRIMARY CTA */}
+        <div className="space-y-6">
+
+          <Link
+            to="/notes/why-ai-programs-fail-after-the-pilot"
+            className="group inline-flex items-center gap-2 no-underline"
+          >
             <span
-              className="text-[color:var(--fg)] font-semibold tracking-tight
-                         transition-colors duration-200
-                         group-hover:text-[color:var(--accent)]
-                         group-hover:underline underline-offset-4
-                         decoration-[rgba(15,30,61,0.45)]"
+              className="
+                text-[color:var(--fg)]
+                font-semibold
+                transition-colors duration-200
+                group-hover:text-[color:var(--accent)]
+                group-hover:underline underline-offset-4
+                decoration-[rgba(15,30,61,0.45)]
+              "
             >
-              Read the executive brief
+              Why most AI programs fail after the pilot
             </span>
 
             <span
-              className="text-[color:var(--muted)] font-light
-                         opacity-0 transition duration-200 delay-75
-                         group-hover:opacity-100 group-hover:translate-x-1"
+              className="
+                text-[color:var(--muted)]
+                font-light
+                opacity-0
+                transition duration-200 delay-75
+                group-hover:opacity-100
+                group-hover:translate-x-1
+              "
               aria-hidden="true"
             >
               →
             </span>
           </Link>
 
-          <div className="text-sm leading-6 text-[color:var(--muted)] max-w-[36rem]">
-            A concise overview of how I build systems, design governance, and structure scalable execution.
+          <div className="text-sm text-[color:var(--muted)] max-w-[34rem] leading-6">
+            A short operator note on governance gaps, ownership design, and why most AI initiatives stall after early momentum.
           </div>
+
         </div>
+
+        <Divider />
+
+        {/* SECONDARY PATHS */}
+        <div className="space-y-4">
+
+          <div className="text-xs tracking-widest text-[color:var(--muted)] uppercase">
+            Explore
+          </div>
+
+          <div className="flex flex-col gap-3 text-[1.02rem]">
+
+            <Link to="/work" className="link">
+              Selected work
+            </Link>
+
+            <Link to="/notes" className="link">
+              Operator notes
+            </Link>
+
+            <Link to="/brief" className="link">
+              Executive brief
+            </Link>
+
+          </div>
+
+        </div>
+
       </div>
     </>
   );
