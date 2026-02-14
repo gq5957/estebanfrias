@@ -9,12 +9,13 @@ export type NoteItem = {
 
 export const notes: NoteItem[] = [
   {
-    slug: "human-in-the-loop-is-governance",
+    slug: "human-in-the-loop-is-governance", 
     title: "Human-in-the-Loop Is Governance, Not a Feature",
     deck: "Why oversight is architecture — and how to design it.",
     date: "2026-02",
     tags: ["AI", "Governance", "Systems"],
-    body: `
+    body: `AI systems don’t fail because of models.
+They fail because of operating models.
 Many organizations treat “human-in-the-loop” as a UX decision.
 
 It isn’t.

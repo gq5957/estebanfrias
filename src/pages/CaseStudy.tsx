@@ -36,6 +36,15 @@ export default function CaseStudy() {
 
       <div className="read-max pt-10">
         <Link to="/work" className="link text-[color:var(--accent)]">← Back to work</Link>
+	<div className="read-max pt-10 space-y-4">
+  <div className="text-sm text-[color:var(--muted)]">
+    Available for enterprise leadership roles and select strategic architecture engagements.
+  </div>
+
+  <Link to="/work" className="link text-[color:var(--accent)]">
+    ← Back to work
+  </Link>
+</div>
       </div>
     </div>
   );

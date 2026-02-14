@@ -9,6 +9,7 @@ import Engagements from "./pages/Engagements";
 import Lab from "./pages/Lab";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Brief from "./pages/Brief";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/engagements" element={<Engagements />} />
         <Route path="/lab" element={<Lab />} />
         <Route path="/contact" element={<Contact />} />
+	<Route path="/brief" element={<Brief />} />
 
         {/* legacy / convenience */}
         <Route path="/consulting" element={<Navigate to="/engagements" replace />} />
