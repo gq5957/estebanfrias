@@ -27,9 +27,16 @@ export default function Work() {
               </span>
 
               {/* Arrow */}
-              <span className="transition-transform duration-200 group-hover:translate-x-1 text-[color:var(--accent)]">
-                →
-              </span>
+              <span
+  className="text-[color:var(--muted)] font-light
+             opacity-0 transition
+             duration-200 delay-75
+             group-hover:opacity-100
+             group-hover:translate-x-1"
+  aria-hidden="true"
+>
+  →
+</span>
             </Link>
 
             {/* Deck */}
