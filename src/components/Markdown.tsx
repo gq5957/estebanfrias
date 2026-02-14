@@ -1,4 +1,3 @@
-\
 import React from "react";
 
 function esc(s: string) {
@@ -48,12 +47,14 @@ function render(md: string) {
       out.push(`<li>${esc(line.slice(2))}</li>`);
       continue;
     }
+
     closeList();
 
     // simple emphasis *text*
-    let p = esc(line).replace(/\*(.+?)\*/g, "<em>$1</em>");
+    const p = esc(line).replace(/\*(.+?)\*/g, "<em>$1</em>");
     out.push(`<p>${p}</p>`);
   }
+
   closeList();
   return out.join("\n");
 }
