@@ -9,7 +9,7 @@ export type NoteItem = {
 
 export const notes: NoteItem[] = [
   {
-    slug: "human-in-the-loop-is-governance", 
+    slug: "human-in-the-loop-is-governance",
     title: "Human-in-the-Loop Is Governance, Not a Feature",
     deck: "Why oversight is architecture — and how to design it.",
     date: "2026-02",
@@ -41,8 +41,7 @@ Design three layers:
 2) **Review gates** (what requires human judgment)
 3) **Escalation pathways** (what happens when it breaks)
 
-When done well, oversight becomes part of the operating model — not an add-on.
-    `.trim()
+When done well, oversight becomes part of the operating model — not an add-on.`.trim()
   },
   {
     slug: "why-ai-programs-fail-after-the-pilot",
@@ -50,8 +49,7 @@ When done well, oversight becomes part of the operating model — not an add-on.
     deck: "The gap is rarely the model. It’s the operating system.",
     date: "2026-02",
     tags: ["AI", "Ops", "Leadership"],
-    body: `
-Pilots are easy. Operations are hard.
+    body: `Pilots are easy. Operations are hard.
 
 Most AI programs fail after the pilot because the organization never designs:
 - Ownership
@@ -59,8 +57,7 @@ Most AI programs fail after the pilot because the organization never designs:
 - Measurement
 - Sustainment
 
-The model isn’t the product. The operating system is.
-    `.trim()
+The model isn’t the product. The operating system is.`.trim()
   },
   {
     slug: "cx-enablement-is-a-systems-problem",
@@ -68,14 +65,12 @@ The model isn’t the product. The operating system is.
     deck: "Scaling clarity requires structure, not heroics.",
     date: "2026-02",
     tags: ["CX", "Enablement", "Systems"],
-    body: `
-Customer experience enablement doesn’t scale through effort. It scales through structure:
+    body: `Customer experience enablement doesn’t scale through effort. It scales through structure:
 - Standardized narratives
 - Repeatable modules
 - Clear operating roles
 - Feedback loops
 
-If the experience relies on a few high performers, it isn’t enablement. It’s heroics.
-    `.trim()
+If the experience relies on a few high performers, it isn’t enablement. It’s heroics.`.trim()
   }
 ];

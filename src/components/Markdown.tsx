@@ -1,85 +1,72 @@
+\
 import React from "react";
 
-/**
- * Minimal markdown renderer for this site:
- * Supports: headings (##), bold (**), unordered lists (-), paragraphs.
- * Keeps dependencies minimal (no markdown library).
- */
-export default function Markdown({ content }: { content: string }) {
-  const lines = content.split(/\r?\n/);
+function esc(s: string) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
 
-  const blocks: React.ReactNode[] = [];
-  let list: string[] = [];
+function render(md: string) {
+  const lines = md.split("\n");
+  const out: string[] = [];
+  let inList = false;
 
-  const flushList = () => {
-    if (list.length) {
-      blocks.push(
-        <ul key={"ul-" + blocks.length} className="my-5 list-disc pl-5 text-[color:var(--muted)]">
-          {list.map((li, i) => (
-            <li key={i} className="leading-7">{renderInline(li)}</li>
-          ))}
-        </ul>
-      );
-      list = [];
+  const closeList = () => {
+    if (inList) {
+      out.push("</ul>");
+      inList = false;
     }
-  };
-
-  const renderInline = (text: string) => {
-    // bold **text**
-    const parts = text.split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
-    return parts.map((p, i) => {
-      if (p.startsWith("**") && p.endsWith("**")) {
-        return (
-          <strong key={i} className="text-[color:var(--fg)] font-semibold">
-            {p.slice(2, -2)}
-          </strong>
-        );
-      }
-      return <React.Fragment key={i}>{p}</React.Fragment>;
-    });
   };
 
   for (const raw of lines) {
-    const line = raw.trimEnd();
+    const line = raw.trimRight();
 
     if (!line.trim()) {
-      flushList();
+      closeList();
       continue;
     }
 
-    if (line.startsWith("- ")) {
-      list.push(line.slice(2));
+    if (line.startsWith("### ")) {
+      closeList();
+      out.push(`<h3>${esc(line.slice(4))}</h3>`);
       continue;
     }
-
-    flushList();
-
     if (line.startsWith("## ")) {
-      blocks.push(
-        <h2 key={"h2-" + blocks.length} className="mt-10 text-[1.35rem] tracking-tight text-[color:var(--fg)]">
-          {renderInline(line.slice(3))}
-        </h2>
-      );
+      closeList();
+      out.push(`<h2>${esc(line.slice(3))}</h2>`);
       continue;
     }
-
     if (line.startsWith("# ")) {
-      blocks.push(
-        <h1 key={"h1-" + blocks.length} className="mt-8 text-[1.9rem] tracking-tight text-[color:var(--fg)]">
-          {renderInline(line.slice(2))}
-        </h1>
-      );
+      closeList();
+      out.push(`<h1>${esc(line.slice(2))}</h1>`);
       continue;
     }
+    if (line.startsWith("- ")) {
+      if (!inList) {
+        out.push("<ul>");
+        inList = true;
+      }
+      out.push(`<li>${esc(line.slice(2))}</li>`);
+      continue;
+    }
+    closeList();
 
-    blocks.push(
-      <p key={"p-" + blocks.length} className="mt-4 text-[1.05rem] leading-7 text-[color:var(--muted)]">
-        {renderInline(line)}
-      </p>
-    );
+    // simple emphasis *text*
+    let p = esc(line).replace(/\*(.+?)\*/g, "<em>$1</em>");
+    out.push(`<p>${p}</p>`);
   }
+  closeList();
+  return out.join("\n");
+}
 
-  flushList();
-
-  return <div className="read-max">{blocks}</div>;
+export default function Markdown({ content }: { content: string }) {
+  const html = React.useMemo(() => render(content), [content]);
+  return (
+    <div
+      className="read-max prose prose-neutral max-w-none
+                 prose-headings:tracking-tight prose-headings:text-[color:var(--fg)]
+                 prose-p:text-[color:var(--muted)] prose-li:text-[color:var(--muted)]
+                 prose-strong:text-[color:var(--fg)]"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
 }

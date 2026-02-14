@@ -6,13 +6,11 @@
   --bg: #f7f8fa;
   --fg: #111318;
   --muted: #5c6370;
-  --hairline: rgba(17, 19, 24, 0.10);
+  --hairline: rgba(17,19,24,0.12);
   --accent: #0f1e3d;
 }
 
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
 body {
   background: var(--bg);
@@ -22,7 +20,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Editorial helpers */
 .container-max { @apply mx-auto max-w-6xl px-5; }
 .read-max { @apply max-w-[46rem]; }
 .hairline { border-color: var(--hairline); }
@@ -31,6 +28,4 @@ body {
   @apply underline underline-offset-4;
   text-decoration-color: rgba(15, 30, 61, 0.25);
 }
-.link:hover {
-  text-decoration-color: rgba(15, 30, 61, 0.6);
-}
+.link:hover { text-decoration-color: rgba(15, 30, 61, 0.6); }

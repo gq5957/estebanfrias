@@ -8,8 +8,8 @@ import Note from "./pages/Note";
 import Engagements from "./pages/Engagements";
 import Lab from "./pages/Lab";
 import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
 import Brief from "./pages/Brief";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -23,9 +23,9 @@ export default function App() {
         <Route path="/engagements" element={<Engagements />} />
         <Route path="/lab" element={<Lab />} />
         <Route path="/contact" element={<Contact />} />
-	<Route path="/brief" element={<Brief />} />
+        <Route path="/brief" element={<Brief />} />
 
-        {/* legacy / convenience */}
+        {/* legacy */}
         <Route path="/consulting" element={<Navigate to="/engagements" replace />} />
 
         <Route path="*" element={<NotFound />} />

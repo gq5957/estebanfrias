@@ -16,7 +16,6 @@ function Nav() {
         <NavLink
           key={item.to}
           to={item.to}
-          end={item.to === "/work" || item.to === "/notes" ? false : undefined}
           className={({ isActive }) =>
             [
               "no-underline transition-colors duration-200",
@@ -48,28 +47,17 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           </Link>
           <Nav />
         </div>
-
         <div className="mt-6 border-b hairline" />
       </header>
 
-      <main
-        className={[
-          "container-max",
-          isHome ? "pb-24" : "pb-28",
-          "pt-12 sm:pt-16",
-        ].join(" ")}
-      >
+      <main className={["container-max", isHome ? "pb-24" : "pb-28", "pt-12 sm:pt-16"].join(" ")}>
         {children}
       </main>
 
       <footer className="container-max pb-10">
         <div className="border-t hairline pt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="text-sm text-[color:var(--muted)]">
-            © {new Date().getFullYear()} Esteban Frias
-          </div>
-          <div className="text-sm text-[color:var(--muted)]">
-            Not indexed · Shared intentionally
-          </div>
+          <div className="text-sm text-[color:var(--muted)]">© {new Date().getFullYear()} Esteban Frias</div>
+          <div className="text-sm text-[color:var(--muted)]">Not indexed · Shared intentionally</div>
         </div>
       </footer>
     </div>
