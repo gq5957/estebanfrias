@@ -61,12 +61,18 @@ function render(md: string) {
 
 export default function Markdown({ content }: { content: string }) {
   const html = React.useMemo(() => render(content), [content]);
+
   return (
     <div
       className="read-max prose prose-neutral max-w-none
                  prose-headings:tracking-tight prose-headings:text-[color:var(--fg)]
-                 prose-p:text-[color:var(--muted)] prose-li:text-[color:var(--muted)]
-                 prose-strong:text-[color:var(--fg)]"
+                 prose-h1:text-[2.1rem] prose-h1:leading-[1.15]
+                 prose-h2:text-[1.6rem] prose-h2:leading-[1.2]
+                 prose-h3:text-[1.25rem] prose-h3:leading-[1.25]
+                 prose-p:text-[color:var(--muted)] prose-p:leading-[1.85] prose-p:my-5
+                 prose-li:text-[color:var(--muted)] prose-li:leading-[1.8]
+                 prose-strong:text-[color:var(--fg)]
+                 prose-ul:my-6"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );
