@@ -9,7 +9,8 @@ export default function Work() {
         <Kicker>Selected work</Kicker>
         <H2>Systems, governance, and enablement — built to operate.</H2>
         <P>
-          These case studies focus on architecture: how the system was designed, how it shipped, and how it runs without dependency.
+          These case studies focus on architecture: how the system was designed, how it shipped,
+          and how it runs without dependency.
         </P>
       </div>
 
@@ -21,15 +22,30 @@ export default function Work() {
                 {w.title}
               </div>
             </Link>
+
             <div className="text-sm text-[color:var(--muted)]">{w.deck}</div>
-            <div className="flex flex-wrap gap-2 pt-1">
+
+            {/* Tags */}
+            <div className="pt-3 flex flex-wrap gap-2">
               {w.tags.map((t) => (
-                <span key={t} className="text-xs text-[color:var(--muted)] border hairline rounded-full px-2.5 py-1">
+                <span
+                  key={t}
+                  className="text-xs text-[color:var(--muted)] border hairline rounded-full px-3 py-1.5"
+                >
                   {t}
                 </span>
               ))}
             </div>
-            <Link to={`/work/${w.slug}`} className="link text-sm text-[color:var(--accent)]">Read</Link>
+
+            {/* CTA */}
+            <div className="pt-4">
+              <Link
+                to={`/work/${w.slug}`}
+                className="link text-sm text-[color:var(--accent)]"
+              >
+                Read case study
+              </Link>
+            </div>
           </div>
         ))}
       </div>
