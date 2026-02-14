@@ -9,21 +9,33 @@ export default function Work() {
         <Kicker>Selected work</Kicker>
         <H2>Systems, governance, and enablement — built to operate.</H2>
         <P>
-          These case studies focus on architecture: how the system was designed, how it shipped,
-          and how it runs without dependency.
+          These case studies focus on architecture: how the system was designed,
+          how it shipped, and how it runs without dependency.
         </P>
       </div>
 
-      <div className="space-y-10">
+      <div className="space-y-12">
         {work.map((w) => (
-          <div key={w.slug} className="space-y-2">
-            <Link to={`/work/${w.slug}`} className="no-underline">
-              <div className="text-[color:var(--fg)] text-[1.08rem] font-semibold hover:underline underline-offset-4 decoration-[rgba(15,30,61,0.3)]">
+          <div key={w.slug} className="space-y-3 group">
+            {/* Title (only link) */}
+            <Link
+              to={`/work/${w.slug}`}
+              className="inline-flex items-center gap-2 text-[color:var(--fg)] text-[1.08rem] font-semibold no-underline"
+            >
+              <span className="group-hover:underline underline-offset-4 decoration-[rgba(15,30,61,0.3)]">
                 {w.title}
-              </div>
+              </span>
+
+              {/* Arrow */}
+              <span className="transition-transform duration-200 group-hover:translate-x-1 text-[color:var(--accent)]">
+                →
+              </span>
             </Link>
 
-            <div className="text-sm text-[color:var(--muted)]">{w.deck}</div>
+            {/* Deck */}
+            <div className="text-sm text-[color:var(--muted)]">
+              {w.deck}
+            </div>
 
             {/* Tags */}
             <div className="pt-3 flex flex-wrap gap-2">
@@ -35,16 +47,6 @@ export default function Work() {
                   {t}
                 </span>
               ))}
-            </div>
-
-            {/* CTA */}
-            <div className="pt-4">
-              <Link
-                to={`/work/${w.slug}`}
-                className="link text-sm text-[color:var(--accent)]"
-              >
-                Read case study
-              </Link>
             </div>
           </div>
         ))}
