@@ -127,8 +127,7 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
   line-height:1.14;
   letter-spacing: -0.03em;
   margin: 0;
-  max-width: 22ch; /* slightly tighter */
-}
+  max-width: 30ch;}
 .lede{
   /* More breathing room between hero headline and the first paragraph */
   margin-top: 26px;
@@ -156,7 +155,7 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
 .tabs a.active{ color: rgba(17,17,17,0.65); }
 
 .section{
-  padding: 36px 0 66px; /* slightly tighter */
+  padding: 30px 0 54px;
 }
 @media (max-width: 820px){ .section{ padding: 30px 0 54px; } }
 
@@ -344,3 +343,213 @@ a:hover {
 
 /* v19 — ensure ES exec enables section aligns with page grid */
 .section { max-width: var(--maxw); margin-left: auto; margin-right: auto; }
+
+/* --- Additions: doctrine, language toggle, experience arc emphasis --- */
+.navGroup{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.lang-toggle{
+  font-size: 0.9rem;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+.lang-toggle a{
+  text-decoration: none;
+  color: inherit;
+}
+.lang-toggle a.active{
+  font-weight: 600;
+  opacity: 1;
+}
+
+.doctrine{
+  text-align:left;
+  margin: 80px 0;
+  font-size: 1.06rem;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+.doctrine strong{ font-weight: 500; }
+
+.section-arc{
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+.section-arc h2{
+  font-size: 2.2rem;
+  letter-spacing: -0.02em;
+}
+.section-arc .arc-content{
+  max-width: 720px;
+}
+.section-arc hr{
+  border: none;
+  border-top: 1px solid rgba(17,18,20,0.10);
+  margin: 0 0 48px 0;
+}
+
+
+.arc-close{
+  margin-top: 18px;
+  padding-left: 14px;
+  border-left: 2px solid var(--hair);
+  font-weight: 600;
+  color: rgba(17,18,20,.84);
+}
+
+/* Memo spacing */
+.memo-divider {
+  margin-bottom: 48px;
+}
+
+/* Reduce executive profile spacing */
+.section {
+  padding: 80px 0 !important;
+}
+
+.section-arc {
+  margin-top: 80px !important;
+  margin-bottom: 80px !important;
+}
+
+.arc-close {
+  margin-top: 40px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+
+/* --- Compact layout overrides (reduce whitespace) --- */
+:root {
+  --container-max: 1100px;
+}
+
+/* Widen content slightly */
+.container, .wrap, .page, .main {
+  max-width: var(--container-max) !important;
+}
+
+/* Reduce top chrome spacing */
+header, .header {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+/* Reduce section vertical whitespace */
+.section {
+  padding: 56px 0 !important;
+}
+
+/* Hero tightening */
+.hero, .hero-wrap {
+  padding-top: 64px !important;
+  padding-bottom: 40px !important;
+}
+
+.hero h1, h1 {
+  max-width: 26ch !important; /* use more width, fewer lines */
+  margin-bottom: 18px !important;
+}
+
+.hero p, .hero .lede, .lede {
+  margin-top: 14px !important;
+  margin-bottom: 14px !important;
+  max-width: 70ch !important;
+}
+
+/* Doctrine spacing */
+.doctrine {
+  margin: 36px 0 44px !important;
+}
+
+/* Lists and paragraphs slightly tighter */
+p { margin: 0 0 14px !important; }
+ul { margin: 10px 0 16px !important; }
+li { margin: 6px 0 !important; }
+
+/* Reduce arc spacing */
+.section-arc {
+  margin-top: 56px !important;
+  margin-bottom: 56px !important;
+}
+
+/* Memo spacing still preserved */
+.memo-divider { margin-bottom: 40px !important; }
+
+
+/* Refine memorandum quote spacing */
+.memo-divider {
+  margin-bottom: 20px !important; /* tighter space before next section */
+  padding-left: 16px;
+  border-left: 2px solid rgba(0,0,0,0.15);
+}
+
+/* Ensure no excessive top margin on next heading */
+.memo-divider + h2,
+.memo-divider + h3 {
+  margin-top: 12px !important;
+}
+
+/* Prevent vertical line from visually stretching */
+.memo-divider p {
+  margin-bottom: 0 !important;
+}
+
+
+/* --- Tight spacing pass (per feedback) --- */
+
+/* Global: reduce overall vertical rhythm */
+.section { padding: 44px 0 !important; }
+.hero, .hero-wrap { padding-top: 54px !important; padding-bottom: 28px !important; }
+.doctrine { margin: 22px 0 28px !important; }
+
+/* Memo pages: remove the big gap between hero and content */
+body.memo .hero, body.memo .hero-wrap { padding-bottom: 16px !important; }
+body.memo .flow { margin-bottom: 6px !important; }
+body.memo .lede { margin-bottom: 10px !important; }
+body.memo .section:first-of-type { padding-top: 24px !important; }
+
+/* Make the "Back to Operating Notes" link sit closer */
+body.memo a[href*="perspective"] { display: inline-block; margin-top: 8px !important; margin-bottom: 6px !important; }
+
+/* Executive profile: tighten the gap before Experience Arc */
+body.profile .hero, body.profile .hero-wrap { padding-bottom: 18px !important; }
+body.profile .section-arc { padding-top: 26px !important; }
+body.profile .section-arc hr { margin-bottom: 22px !important; }
+
+/* Home: tighten gap after hero/doctrine into the first section */
+body.home .hero, body.home .hero-wrap { padding-bottom: 22px !important; }
+body.home .doctrine { margin-bottom: 22px !important; }
+
+
+/* --- Tighter global spacing (requested) --- */
+.hero{ padding: 64px 0 24px !important; }
+.section{ padding: 22px 0 30px !important; }
+.doctrine{ margin: 18px 0 24px !important; }
+
+/* Tighten memo pages specifically */
+body.memo .hero{ padding: 56px 0 16px !important; }
+body.memo .hero + .section{ padding-top: 14px !important; } /* removes the big gap under Back link */
+body.memo .section{ padding: 18px 0 26px !important; }
+
+/* Quote + divider spacing (remove extra "line" effect) */
+body.memo .quote{ margin-top: 12px !important; }
+.memo-divider{
+  margin-bottom: 12px !important;
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+/* Keep heading from floating away */
+body.memo .memo-divider + .h2,
+body.memo .memo-divider + h2,
+body.memo .memo-divider + .h3,
+body.memo .memo-divider + h3{
+  margin-top: 10px !important;
+}
