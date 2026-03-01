@@ -1,4 +1,4 @@
-/* EstebanFrias.com — v40 */
+/* EstebanFrias.com — v41 */
 :root {
   --bg: #ffffff;
   --ink: #111214;
@@ -64,7 +64,7 @@ a:hover { color: var(--linkHover); }
   gap: 20px;
   align-items: center;
   flex-wrap: nowrap;
-  font-size: 14px;
+  font-size: 13px;
 }
 .nav a {
   color: rgba(17,18,20,.55);
@@ -113,14 +113,16 @@ a:hover { color: var(--linkHover); }
 .lede {
   margin-top: 26px;
   color: rgba(17,18,20,.7);
-  font-size: 18px;
-  max-width: 76ch;
+  font-size: 16px;
+  max-width: 72ch;
 }
 .flow {
-  margin-top: 26px;
+  margin-top: 22px;
   color: rgba(17,18,20,.5);
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 400;
 }
+.flow strong { font-weight: 400; }
 
 /* ── Hero tabs ── */
 .hero-tabs {
@@ -131,7 +133,7 @@ a:hover { color: var(--linkHover); }
 .hero-tabs a {
   color: rgba(17,18,20,.55);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
 }
 .hero-tabs a:hover { color: rgba(17,18,20,1); }
@@ -144,7 +146,7 @@ a:hover { color: var(--linkHover); }
 
 .h2 {
   margin: 0 0 16px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -217,8 +219,8 @@ a:hover { color: var(--linkHover); }
 @media (max-width: 820px) { .notes-grid { grid-template-columns: 1fr; } }
 .note-card .nc-label { font-size: 13px; color: rgba(17,18,20,.50); margin: 0 0 6px; }
 .note-card .nc-title { font-weight: 600; letter-spacing: -0.01em; color: rgba(17,18,20,.92); margin: 0 0 4px; }
-.note-card .nc-body { margin: 0; color: rgba(17,18,20,.70); font-size: 14px; }
-.note-card .nc-link { display: inline-block; margin-top: 8px; font-size: 14px; color: rgba(17,18,20,.60); }
+.note-card .nc-body { margin: 0; color: rgba(17,18,20,.70); font-size: 13px; }
+.note-card .nc-link { display: inline-block; margin-top: 8px; font-size: 13px; color: rgba(17,18,20,.60); }
 .note-card .nc-link:hover { color: rgba(17,18,20,1); }
 
 /* ── Footer ── */
@@ -238,7 +240,7 @@ a:hover { color: var(--linkHover); }
   color: rgba(17,18,20,.50);
   margin: 0 0 8px;
 }
-.small { margin: 0; font-size: 14px; color: rgba(17,18,20,.78); }
+.small { margin: 0; font-size: 13px; color: rgba(17,18,20,.78); }
 .footer a { color: rgba(17,18,20,.70); text-decoration: none; }
 .footer a:hover { color: rgba(17,18,20,1); }
 
