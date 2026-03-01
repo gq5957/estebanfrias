@@ -1,4 +1,4 @@
-/* EstebanFrias.com — v41 */
+/* EstebanFrias.com — v42 */
 :root {
   --bg: #ffffff;
   --ink: #111214;
@@ -122,7 +122,15 @@ a:hover { color: var(--linkHover); }
   font-size: 13px;
   font-weight: 400;
 }
-.flow strong { font-weight: 400; }
+
+/* Three-sentence axiom on home pages only */
+.axiom {
+  margin-top: 22px;
+  color: rgba(17,18,20,.75);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
 
 /* ── Hero tabs ── */
 .hero-tabs {
