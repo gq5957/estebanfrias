@@ -1,4 +1,4 @@
-/* EstebanFrias.com — v42 */
+/* EstebanFrias.com — v43 */
 :root {
   --bg: #ffffff;
   --ink: #111214;
@@ -127,7 +127,7 @@ a:hover { color: var(--linkHover); }
 .axiom {
   margin-top: 22px;
   color: rgba(17,18,20,.75);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
