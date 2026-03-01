@@ -1,55 +1,97 @@
-
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Memorando 03 — Esteban Frias</title>
-<meta content="La disciplina precede la autonomía: guardrails antes de escalar sistemas agénticos." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../../assets/styles.css?v=39" rel="stylesheet"/>
-</head>
-<body class="memo">
-<a class="skip" href="#main">Saltar al contenido</a>
-<header class="header">
-<div class="container">
-<div class="navGroup"><nav aria-label="Primary" class="nav">
-<a class="" href="../index.html">Inicio</a><a class="" href="../executive-profile.html">Perfil Ejecutivo</a><a aria-current="page" class="active" href="../perspective.html">Perspectiva</a><a class="" href="../connect.html">Contacto</a>
-</nav><div class="lang-toggle"><a href="../../memoranda/memorandum-03.html">EN</a><span> | </span><a class="active" href="memorandum-03.html">ES</a></div></div>
-</div>
-</header>
-<main id="main">
-<section class="hero" style="padding-bottom:18px">
-<div class="container">
-<p class="kicker">Memorando 03</p>
-<h1 class="h1" style="max-width:38ch;">
-<span class="line">La disciplina precede</span><span class="line">la autonomía — guardrails</span><span class="line">antes de escalar</span>
-</h1>
-<p class="lede">Cuando flujos agénticos y actores no humanos entran a producción, el modelo operativo se vuelve la superficie principal de riesgo.</p>
-<p class="flow">Guardrails · Responsabilidad · Ciclo de vida</p>
-<p class="p" style="margin-top:10px"><a href="../perspective.html">← Volver a Notas operativas</a></p>
-</div>
-</section>
-<section class="section">
-<div class="container">
-<h2 class="h2">El riesgo</h2>
-<p class="p">La autonomía aumenta la velocidad — y amplifica modos de falla. Sin propiedad clara, límites e higiene de ciclo de vida, la organización aprende a través de incidentes.</p>
-<h2 class="h2">Guardrails que importan</h2>
-<ul class="list">
-<li><strong>Propiedad:</strong> quién responde por el comportamiento en producción.</li>
-<li><strong>Límites:</strong> qué puede hacer por defecto y qué requiere escalamiento.</li>
-<li><strong>Implicaciones de identidad:</strong> controles a nivel dispositivo vs agente (requisitos, no protocolos).</li>
-<li><strong>Ciclo de vida:</strong> alta, actualizaciones, auditoría, retiro.</li>
-<li><strong>Profundidad técnica:</strong> alinear expertos de seguridad/dominio para implementar correctamente.</li>
-</ul>
-<div class="quote"><p>Autonomía sin disciplina es velocidad sin control.</p></div>
-</div>
-</section>
-<footer class="footer"><div class="container"><div class="footerRow"><div><p class="smallLabel">Esteban Frias</p><p class="small">Construyendo sistemas empresariales que funcionan en silencio — y elevan a las personas dentro de ellos.</p></div><div><p class="small" style="margin-top:0; color: rgba(17,18,20,.55);">© Esteban Frias</p></div></div></div></footer></main>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>Memorando 03 — La gobernanza de IA es un problema estructural</title>
+  <meta content="Perspectiva sobre gobernanza y diseño del sistema operativo." name="description"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="../../assets/styles.css?v=40" rel="stylesheet"/>
 
-  None
+  <link rel="canonical" href="https://estebanfrias.com/es/memoranda/memorandum-03.html" />
+  <link rel="alternate" href="https://estebanfrias.com/es/memoranda/memorandum-03.html" hreflang="es" />
+  <link rel="alternate" href="https://estebanfrias.com/memoranda/memorandum-03.html" hreflang="en" />
+  <meta name="theme-color" content="#000000" />
+
+  <meta property="og:site_name" content="Esteban Frias" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Memorando 03 — La gobernanza de IA es un problema estructural" />
+  <meta property="og:description" content="IA · Sistemas · Gobernanza." />
+  <meta property="og:url" content="https://estebanfrias.com/es/memoranda/memorandum-03.html" />
+  <meta property="og:image" content="https://estebanfrias.com/assets/ef-og-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Memorando 03 — La gobernanza de IA es un problema estructural" />
+  <meta name="twitter:description" content="IA · Sistemas · Gobernanza." />
+  <meta name="twitter:image" content="https://estebanfrias.com/assets/ef-og-1200x630.png" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/ef-icon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/ef-icon-180.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/ef-icon-512.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/ef-icon.svg" />
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="header">
+    <div class="container">
+      <div class="headerRow">
+        <div class="brand"><a href="../index.html">Esteban Frias</a></div>
+        <nav aria-label="Principal" class="nav">
+          <a href="../executive-profile.html">Perfil Ejecutivo</a>
+          <a class="active" href="../perspective.html">Perspectiva</a>
+          <a href="../connect.html">Contacto</a>
+          <a class="lang" href="../../memoranda/memorandum-03.html">English</a>
+        </nav>
+      </div>
+      <div class="rule"></div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" style="padding-bottom:18px">
+      <div class="container">
+        <p class="kicker">Memorando 03</p>
+        <h1 class="h1" style="max-width:28ch;">La gobernanza de IA es un problema estructural</h1>
+        <p class="flow">IA · Sistemas · Gobernanza</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <p class="p">La mayoría de los retos de IA no son técnicos. Son estructurales.</p>
+        <p class="p">Cuando la IA es "prioridad estratégica" pero no tiene dueño claro, los resultados se fragmentan. Sin arquitectura de decisión y accountability, los pilotos no escalan.</p>
+        <p class="p">La habilitación de IA requiere gobernanza integrada desde el inicio —no añadida después del primer éxito.</p>
+        <div class="quote"><p>La modernización no se sostiene si no existe arquitectura de ejecución.</p></div>
+        <div style="margin-top:22px; display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+          <a class="underline" href="memorandum-02.html">← Anterior</a>
+          <a class="underline" href="../executive-profile.html">Perfil Ejecutivo</a>
+          <a class="underline" href="memorandum-04.html">Siguiente →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footerRow">
+        <div>
+          <p class="smallLabel">IA · SISTEMAS · GOBERNANZA</p>
+          <p class="small">La modernización integrada en gobernanza, incentivos y sistemas operativos perdura.</p>
+        </div>
+        <div>
+          <p class="smallLabel">Contacto directo</p>
+          <p class="small">esteban [at] solarynadvisory [dot] com</p>
+        </div>
+        <div>
+          <p class="smallLabel">LinkedIn</p>
+          <p class="small"><a class="underline" href="https://linkedin.com/in/esfrias" target="_blank" rel="noopener">linkedin.com/in/esfrias</a></p>
+          <p class="small" style="margin-top:10px; color: rgba(17,18,20,.55);">© 2026 Esteban Frias</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
