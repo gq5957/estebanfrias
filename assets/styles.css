@@ -76,8 +76,6 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
   color: var(--muted);
 }
 .nav a{
-  /* All top-nav items share the same default tone + weight.
-     Hover provides the only emphasis (turns black). */
   color: rgba(17,18,20,.55);
   font-weight: 500;
   text-decoration: none;
@@ -90,13 +88,11 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
   outline-offset: 3px;
   border-radius: 8px;
 }
-/* Keep all nav items equal weight + tone, even on the active page */
-.nav a.active{ 
+.nav a.active{
   color: rgba(17,17,17,0.65);
   font-weight: 500;
 }
-/* Language toggle matches all other nav links */
-.nav a.lang{ 
+.nav a.lang{
   color: rgba(17,17,17,0.65);
   font-weight: 500;
 }
@@ -106,7 +102,6 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
 .hero{ padding: 86px 0 40px; }
 @media (max-width: 820px){ .hero{ padding: 62px 0 32px; } }
 
-/* Small-caps feel via uppercase + tracking */
 .triad{
   font-size: 12px;
   letter-spacing: .20em;
@@ -119,7 +114,7 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
   letter-spacing: .16em;
   text-transform: uppercase;
   color: rgba(17,18,20,.44);
-  margin: 0 0 18px; /* more separation from headline */
+  margin: 0 0 18px;
 }
 
 .h1{
@@ -127,9 +122,9 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
   line-height:1.14;
   letter-spacing: -0.03em;
   margin: 0;
-  max-width: 30ch;}
+  max-width: 22ch;
+}
 .lede{
-  /* More breathing room between hero headline and the first paragraph */
   margin-top: 26px;
   color: rgba(17,18,20,.7);
   font-size: 18px;
@@ -155,12 +150,11 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
 .tabs a.active{ color: rgba(17,17,17,0.65); }
 
 .section{
-  padding: 30px 0 54px;
+  padding: 36px 0 66px;
 }
 @media (max-width: 820px){ .section{ padding: 30px 0 54px; } }
 
 .h2{
-  /* Increase separation between section heading and its first line */
   margin: 0 0 16px;
   font-size: 18px;
   font-weight: 600;
@@ -172,6 +166,14 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
   max-width: 86ch;
 }
 .p + .p{ margin-top: 12px; }
+
+/* paragraph-break: used to add spacing after a block before a new run of .p */
+.paragraph-break{
+  margin: 22px 0 0;
+  color: rgba(17,18,20,.74);
+  max-width: 86ch;
+}
+.paragraph-break + .p{ margin-top: 12px; }
 
 .quote{
   margin-top: 18px;
@@ -251,56 +253,48 @@ a.underline:hover{ text-decoration-color: rgba(17,18,20,.45); }
   color: rgba(17,18,20,.78);
 }
 
-
-/* Brand link should read like identity, not a hyperlink */
+/* Brand link: identity, not hyperlink */
 .brand a{ text-decoration:none; }
 .brand a:hover{color:var(--linkHover)}
 
 /* Force intentional line breaks for 2-sentence hero headlines */
 .h1 .line{ display:block; }
 
-
-/* v15 — make Executive profile + Perspective equally linkable */
-.subnav a,
-.tabs a,
-.hero-tabs a {
-  color: rgba(17,17,17,0.65);
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 0;
-  padding-bottom: 0;
+/* Hero tabs / subnav */
+.hero-tabs,
+.subnav,
+.tabs {
+  display: flex;
+  gap: 24px;
 }
 
+.hero-tabs a,
+.subnav a,
+.tabs a {
+  color: rgba(17,17,17,.65);
+  font-weight: 500;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  letter-spacing: .2px;
+}
+
+.hero-tabs a:hover,
+.subnav a:hover,
+.tabs a:hover {
+  color: rgba(17,17,17,1);
+}
+
+.hero-tabs a.active,
 .subnav a.active,
 .tabs a.active,
-.hero-tabs a.active,
+.hero-tabs a[aria-current="page"],
 .subnav a[aria-current="page"],
-.tabs a[aria-current="page"],
-.hero-tabs a[aria-current="page"] {
+.tabs a[aria-current="page"] {
   color: rgba(17,17,17,0.65);
   font-weight: 500;
-  text-decoration: none;
-  border-bottom: 0;
-  padding-bottom: 0;
 }
 
-/* v17 — linkability: subtle by default, darker on hover, no underlines */
-a {
-  color: rgba(17,17,17,.70);
-  text-decoration: none;
-}
-
-a:hover {
-  color: rgba(17,17,17,1);
-  text-decoration: none;
-}
-
-/* Keep footer/body links readable */
-.footer a, footer a {
-  color: rgba(17,17,17,.70);
-}
-
-/* Top nav + hero tabs: match Perspective hover behavior */
+/* Top nav links: uniform tone */
 .nav a,
 .hero-tabs a,
 .subnav a,
@@ -318,238 +312,21 @@ a:hover {
   color: rgba(17,17,17,1);
 }
 
-.nav a[aria-current="page"],
-.hero-tabs a[aria-current="page"],
-.subnav a[aria-current="page"],
-.tabs a[aria-current="page"] {
-  color: rgba(17,17,17,0.65);
-}
-
-
-/* v18 — spacing + visual balance for hero tabs */
-.hero-tabs,
-.subnav,
-.tabs {
-  display: flex;
-  gap: 24px;
-}
-
-.hero-tabs a,
-.subnav a,
-.tabs a {
-  letter-spacing: .2px;
-}
-
-
-/* v19 — ensure ES exec enables section aligns with page grid */
-.section { max-width: var(--maxw); margin-left: auto; margin-right: auto; }
-
-/* --- Additions: doctrine, language toggle, experience arc emphasis --- */
-.navGroup{
-  display:flex;
-  align-items:center;
-  gap: 14px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.lang-toggle{
-  font-size: 0.9rem;
-  opacity: 0.8;
-  white-space: nowrap;
-}
-.lang-toggle a{
+/* Global link defaults (keeps footer/body readable) */
+a {
+  color: rgba(17,17,17,.70);
   text-decoration: none;
-  color: inherit;
 }
-.lang-toggle a.active{
-  font-weight: 600;
-  opacity: 1;
+a:hover {
+  color: rgba(17,17,17,1);
+  text-decoration: none;
 }
-
-.doctrine{
-  text-align:left;
-  margin: 80px 0;
-  font-size: 1.06rem;
-  letter-spacing: 0.02em;
-  opacity: 0.85;
-}
-.doctrine strong{ font-weight: 500; }
-
-.section-arc{
-  margin-top: 70px;
-  margin-bottom: 70px;
-}
-.section-arc h2{
-  font-size: 2.2rem;
-  letter-spacing: -0.02em;
-}
-.section-arc .arc-content{
-  max-width: 720px;
-}
-.section-arc hr{
-  border: none;
-  border-top: 1px solid rgba(17,18,20,0.10);
-  margin: 0 0 48px 0;
+.footer a, footer a {
+  color: rgba(17,17,17,.70);
 }
 
-
-.arc-close{
-  margin-top: 18px;
-  padding-left: 14px;
-  border-left: 2px solid var(--hair);
-  font-weight: 600;
-  color: rgba(17,18,20,.84);
+/* Formation section (background arc) */
+.formation{
+  margin-top: 34px;
 }
-
-/* Memo spacing */
-.memo-divider {
-  margin-bottom: 48px;
-}
-
-/* Reduce executive profile spacing */
-.section {
-  padding: 80px 0 !important;
-}
-
-.section-arc {
-  margin-top: 80px !important;
-  margin-bottom: 80px !important;
-}
-
-.arc-close {
-  margin-top: 40px;
-  font-size: 1.15rem;
-  font-weight: 500;
-  opacity: 0.9;
-}
-
-
-/* --- Compact layout overrides (reduce whitespace) --- */
-:root {
-  --container-max: 1100px;
-}
-
-/* Widen content slightly */
-.container, .wrap, .page, .main {
-  max-width: var(--container-max) !important;
-}
-
-/* Reduce top chrome spacing */
-header, .header {
-  padding-top: 14px !important;
-  padding-bottom: 14px !important;
-}
-
-/* Reduce section vertical whitespace */
-.section {
-  padding: 56px 0 !important;
-}
-
-/* Hero tightening */
-.hero, .hero-wrap {
-  padding-top: 64px !important;
-  padding-bottom: 40px !important;
-}
-
-.hero h1, h1 {
-  max-width: 26ch !important; /* use more width, fewer lines */
-  margin-bottom: 18px !important;
-}
-
-.hero p, .hero .lede, .lede {
-  margin-top: 14px !important;
-  margin-bottom: 14px !important;
-  max-width: 70ch !important;
-}
-
-/* Doctrine spacing */
-.doctrine {
-  margin: 36px 0 44px !important;
-}
-
-/* Lists and paragraphs slightly tighter */
-p { margin: 0 0 14px !important; }
-ul { margin: 10px 0 16px !important; }
-li { margin: 6px 0 !important; }
-
-/* Reduce arc spacing */
-.section-arc {
-  margin-top: 56px !important;
-  margin-bottom: 56px !important;
-}
-
-/* Memo spacing still preserved */
-.memo-divider { margin-bottom: 40px !important; }
-
-
-/* Refine memorandum quote spacing */
-.memo-divider {
-  margin-bottom: 20px !important; /* tighter space before next section */
-  padding-left: 16px;
-  border-left: 2px solid rgba(0,0,0,0.15);
-}
-
-/* Ensure no excessive top margin on next heading */
-.memo-divider + h2,
-.memo-divider + h3 {
-  margin-top: 12px !important;
-}
-
-/* Prevent vertical line from visually stretching */
-.memo-divider p {
-  margin-bottom: 0 !important;
-}
-
-
-/* --- Tight spacing pass (per feedback) --- */
-
-/* Global: reduce overall vertical rhythm */
-.section { padding: 44px 0 !important; }
-.hero, .hero-wrap { padding-top: 54px !important; padding-bottom: 28px !important; }
-.doctrine { margin: 22px 0 28px !important; }
-
-/* Memo pages: remove the big gap between hero and content */
-body.memo .hero, body.memo .hero-wrap { padding-bottom: 16px !important; }
-body.memo .flow { margin-bottom: 6px !important; }
-body.memo .lede { margin-bottom: 10px !important; }
-body.memo .section:first-of-type { padding-top: 24px !important; }
-
-/* Make the "Back to Operating Notes" link sit closer */
-body.memo a[href*="perspective"] { display: inline-block; margin-top: 8px !important; margin-bottom: 6px !important; }
-
-/* Executive profile: tighten the gap before Experience Arc */
-body.profile .hero, body.profile .hero-wrap { padding-bottom: 18px !important; }
-body.profile .section-arc { padding-top: 26px !important; }
-body.profile .section-arc hr { margin-bottom: 22px !important; }
-
-/* Home: tighten gap after hero/doctrine into the first section */
-body.home .hero, body.home .hero-wrap { padding-bottom: 22px !important; }
-body.home .doctrine { margin-bottom: 22px !important; }
-
-
-/* --- Tighter global spacing (requested) --- */
-.hero{ padding: 64px 0 24px !important; }
-.section{ padding: 22px 0 30px !important; }
-.doctrine{ margin: 18px 0 24px !important; }
-
-/* Tighten memo pages specifically */
-body.memo .hero{ padding: 56px 0 16px !important; }
-body.memo .hero + .section{ padding-top: 14px !important; } /* removes the big gap under Back link */
-body.memo .section{ padding: 18px 0 26px !important; }
-
-/* Quote + divider spacing (remove extra "line" effect) */
-body.memo .quote{ margin-top: 12px !important; }
-.memo-divider{
-  margin-bottom: 12px !important;
-  border-left: none !important;
-  padding-left: 0 !important;
-}
-
-/* Keep heading from floating away */
-body.memo .memo-divider + .h2,
-body.memo .memo-divider + h2,
-body.memo .memo-divider + .h3,
-body.memo .memo-divider + h3{
-  margin-top: 10px !important;
-}
+.formation .p + .p{ margin-top: 12px; }
